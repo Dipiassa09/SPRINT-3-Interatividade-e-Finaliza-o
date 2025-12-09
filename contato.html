@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - FlashNews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header" class="fixed-menu">
+        <div class="header-container">
+            <h1><a href="index.html">FlashNews</a></h1>
+            <nav>
+                <ul class="menu-horizontal">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#">Tecnologia</a></li>
+                    <li><a href="#">Esporte</a></li>
+                    <li><a href="#">Política</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container-layout contato-layout">
+        <section class="formulario-sugestao">
+            <h2>Fale Conosco / Sugira uma Pauta</h2>
+            
+            <form action="#" method="post" class="form-contato"> 
+                
+                <fieldset>
+                    <legend>Dados de Contato</legend>
+                    <div class="form-grupo">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome_contato" required pattern="[A-Za-z\s]+" title="Apenas letras e espaços são permitidos.">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email_contato" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="telefone">Telefone (DDD + Número):</label>
+                        <input type="tel" id="telefone" name="telefone_contato" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="assunto">Assunto:</label>
+                        <select id="assunto" name="assunto_contato" required>
+                            <option value="">Selecione o Assunto</option>
+                            <option value="sugestao">Sugestão de Pauta</option>
+                            <option value="duvida">Dúvida Técnica/Reportagem</option>
+                            <option value="comercial">Comercial</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalhes e Tipo de Contato</legend>
+                    <div class="form-grupo">
+                        <label>Prefere ser contatado via:</label>
+                        <label class="radio-label"><input type="radio" name="tipo_contato" value="email" required> Email</label>
+                        <label class="radio-label"><input type="radio" name="tipo_contato" value="telefone"> Telefone</label>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="mensagem">Mensagem/Detalhes da Pauta:</label>
+                        <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                    </div>
+
+                    <div class="form-grupo checkbox-termos">
+                        <label><input type="checkbox" name="aceite_termos" required> Eu aceito os termos de uso e política de privacidade.</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn btn-secondary">Enviar Mensagem</button>
+            </form>
+        </section>
+
+        <aside class="info-contato-direto">
+            <h3>Horário de Atendimento</h3>
+            <table class="tabela-horario">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Horário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="zebra">
+                        <td>Segunda à Sexta</td>
+                        <td>09:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Sábado</td>
+                        <td>09:00 - 12:00</td>
+                    </tr>
+                    <tr class="zebra">
+                        <td>Domingo / Feriados</td>
+                        <td>Fechado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 FlashNews. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,492 @@
+* {
+    /* Seletores: Universal (*) */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-principal: #1f3c7a;    /* Azul Marinho Profundo */
+    --cor-secundaria: #ff7f50;   /* Coral (Destaque/Ação) */
+    --cor-fundo: #f4f7f9;        /* Fundo Branco-Azulado Suave */
+    --cor-texto: #333333;
+    --cor-sombra: rgba(0, 0, 0, 0.08);
+}
+
+/* Seletores: Tag (body, h1, p) */
+body {
+    font-family: 'Roboto', sans-serif; /* Tipografia: Fontes (Google Fonts) */
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* 6. BOX MODEL E LAYOUT - Posicionamento Fixed */
+#header.fixed-menu { /* Seletores: ID (#header) e Classe (.fixed-menu) */
+    position: fixed; /* Posicionamento: Fixed (menu fixo) */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Z-index (sobreposições) */
+}
+
+/* 4 & 5. ESTILIZAÇÃO - HEADER */
+header {
+    background: var(--cor-principal); /* Cores: Paleta aplicada */
+    color: white;
+    box-shadow: 0 2px 5px var(--cor-sombra);
+    padding: 10px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Display: flex */
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700; /* Tipografia: Pesos */
+}
+
+/* 5. ESTILIZAÇÃO - Listas Horizontais para Menu */
+.menu-horizontal {
+    list-style: none; /* Listas: Estilização de marcadores */
+    display: flex; /* Display: flex */
+    gap: 20px;
+}
+
+/* 5. ESTILIZAÇÃO - Links Estados */
+nav a {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+nav a:hover { /* Links: Estados (a:hover) */
+    color: var(--cor-secundaria);
+}
+nav a:visited { /* Links: Estados (a:visited) */
+    color: #ccc;
+}
+nav a:active { /* Links: Estados (a:active) */
+    color: #ff0000;
+}
+
+/* 6. BOX MODEL E LAYOUT - Layout Principal */
+main {
+    /* MANTENHA o padding-bottom, mas remova o padding-top daqui */
+    padding-bottom: 30px; 
+}
+
+/* Adicione esta nova regra: */
+.conteudo-com-offset {
+    /* Força um espaçamento generoso para descer o conteúdo */
+    padding-top: 150px !important; 
+}
+
+/* 6. BOX MODEL E LAYOUT - Grid de Notícias */
+.conteudo-principal {
+    display: grid; /* Display: grid */
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* 6. BOX MODEL E LAYOUT - Cards */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--cor-sombra);
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative; /* Posicionamento: Relative (cards) */
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card h3 {
+    padding: 15px 15px 5px;
+    font-size: 1.3rem;
+    color: var(--cor-principal);
+}
+.card p {
+    padding: 0 15px 10px;
+    font-size: 0.9rem;
+}
+.link-saiba-mais {
+    display: block;
+    padding: 0 15px 15px;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+}
+
+/* 6. BOX MODEL E LAYOUT - Seção Hero */
+.hero-section {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.hero-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+.hero-content {
+    position: absolute; /* Posicionamento: Absolute */
+    bottom: 0;
+    left: 0;
+    padding: 40px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    color: white;
+}
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.badge {
+    position: absolute; /* Posicionamento: Absolute (badges) */
+    top: 20px;
+    right: 20px;
+    background: var(--cor-secundaria);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* 5. ESTILIZAÇÃO - Botões */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.btn-primary {
+    background: var(--cor-secundaria);
+    color: white;
+}
+.btn-secondary {
+    background: var(--cor-principal);
+    color: white;
+}
+
+/* 5. ESTILIZAÇÃO - Sidebar */
+.sidebar-box {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--cor-sombra);
+}
+.sidebar-box h4 {
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+.lista-categorias, .lista-mais-lidas {
+    list-style-position: inside;
+    padding-left: 0;
+}
+.lista-mais-lidas {
+    list-style-type: decimal; /* Listas: Estilização de marcadores */
+    padding-left: 20px;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+/* 5 & 6. ESTILIZAÇÃO E LAYOUT - Notícia Completa (Flutuante para imagem) */
+.noticia-completa-layout {
+    display: flex;
+    gap: 30px;
+}
+.conteudo-noticia {
+    flex: 3;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px var(--cor-sombra);
+}
+.conteudo-noticia img {
+    max-width: 50%; /* Imagem que flutua */
+    height: auto;
+    float: left; /* Posicionamento: Float (imagens) */
+    margin: 0 20px 10px 0;
+    border-radius: 6px;
+}
+
+/* 5. ESTILIZAÇÃO - Tabela */
+.tabela-dados {
+    width: 100%;
+    border-collapse: collapse; /* Tabelas: Bordas */
+    margin: 20px 0;
+}
+.tabela-dados th, .tabela-dados td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+.tabela-dados thead th {
+    background-color: var(--cor-principal);
+    color: white;
+}
+.tabela-dados tbody tr.zebra {
+    background-color: #f9f9f9;
+}
+
+.corpo-da-materia strong {
+    color: var(--cor-secundaria);
+}
+.corpo-da-materia em {
+    font-style: italic;
+}
+
+.contato-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding-top: 90px;
+}
+.formulario-sugestao {
+    background: white;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--cor-sombra);
+}
+.form-grupo {
+    margin-bottom: 15px;
+}
+.form-grupo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.form-contato input:not([type="radio"]):not([type="checkbox"]), .form-contato select, .form-contato textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.checkbox-termos label {
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+.radio-label {
+    margin-right: 15px;
+    display: inline-block; /* Display: inline */
+}
+.tabela-horario {
+    /* (Estilo de tabela já definido acima, apenas garantindo uso da classe) */
+    width: 100%;
+}
+
+footer {
+    background: var(--cor-principal);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+.footer-nav a {
+    color: #cccccc;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out; /* Efeitos: Transition (suavização) em tudo */
+}
+
+:root {
+    --cor-principal: #1f3c7a;
+    --cor-secundaria: #ff7f50;
+    --cor-secundaria-hover: #e06c40; /* Novo: Coral Escuro para hover */
+    --cor-fundo: #f4f7f9;
+    --cor-texto: #333333;
+    --cor-sombra: rgba(0, 0, 0, 0.08);
+    --cor-gradiente-hero: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1)); /* Efeitos: Gradientes */
+}
+
+/* ESTILIZAÇÃO - Links Estados e Hover */
+nav a, .footer-nav a, .link-saiba-mais {
+    transition: color 0.2s ease-in-out;
+}
+nav a:hover, .footer-nav a:hover, .link-saiba-mais:hover { 
+    color: var(--cor-secundaria);
+    opacity: 0.9; /* Efeitos: Opacity */
+}
+
+/* EFEITOS CSS - Cards (Aplica Box-shadow, Border-radius, Transform e Transition) */
+.card {
+    /* ... mantenha os estilos existentes ... */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    border-radius: 8px; /* Efeitos: Border-radius (cards arredondados) */
+}
+.card:hover { /* Pseudo-classes: :hover */
+    transform: translateY(-5px) scale(1.01); /* Efeitos: Transform: translate, scale */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Box-shadow mais pronunciada no hover */
+}
+
+/* EFEITOS CSS - Botões */
+.btn {
+    transition: background-color 0.3s, opacity 0.3s;
+}
+.btn-primary:hover {
+    background: var(--cor-secundaria-hover);
+    transform: scale(1.05); /* Transform: scale */
+}
+.btn-secondary:hover {
+    background: #003366;
+    transform: scale(1.05);
+}
+
+/* EFEITOS CSS - Formulários (Aplica :focus) */
+.form-contato input:not([type="radio"]):not([type="checkbox"]):focus,
+.form-contato select:focus, 
+.form-contato textarea:focus { /* Pseudo-classes: :focus */
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 8px rgba(255, 127, 80, 0.5);
+    transform: scale(1.005); /* Transform: scale leve */
+}
+
+/* ESTILIZAÇÃO - Tabelas (Uso de :nth-child) */
+/* Aplica o estilo zebra para as tabelas existentes */
+.tabela-dados tbody tr:nth-child(even), 
+.tabela-horario tbody tr:nth-child(even) { /* Pseudo-classes: :nth-child (zebra striping) */
+    background-color: #f9f9f9; 
+}
+.tabela-dados tbody tr:nth-child(odd),
+.tabela-horario tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* BOX MODEL E LAYOUT - Ajuste de padding (Garante o afastamento do menu fixo) */
+.conteudo-com-offset, .contato-layout { 
+    padding-top: 120px; /* Garante que o conteúdo fique abaixo do header fixo (Ajuste solicitado) */
+}
+
+/* -------------------------------------------
+   10. MEDIA QUERIES E RESPONSIVIDADE (SPRINT 3)
+   ------------------------------------------- */
+
+/* Para o Menu Responsivo */
+.menu-toggle, .menu-icon {
+    display: none; /* Esconde o checkbox e o ícone de menu por padrão */
+}
+
+@media (max-width: 900px) {
+    /* Layout da Home e Contato muda para coluna única em telas menores */
+    .conteudo-principal { /* Contém a grid de notícias e a sidebar */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        order: 2; /* Move a sidebar para baixo da grid de notícias */
+    }
+
+    .noticias-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapta a grid */
+    }
+    
+    /* Layout de contato */
+    .contato-layout { 
+        grid-template-columns: 1fr; /* Transforma em coluna única */
+    }
+    
+    /* Na página de notícia (noticia.html) a coluna lateral vai para baixo */
+    .noticia-completa-layout {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes Gerais */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    
+    /* Menu Responsivo (Hamburger Menu) */
+    
+    /* 1. Mostra o ícone de menu */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        color: white;
+    }
+    
+    /* 2. Layout do Header no Mobile */
+    .header-container {
+        padding: 0 15px;
+        justify-content: space-between; /* Move o logo e o ícone para as pontas */
+    }
+    
+    /* 3. Oculta o menu horizontal (desktop) */
+    .menu-horizontal {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 65px; /* Altura do header para drop-down */
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-principal);
+        box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+        z-index: 999;
+        padding: 10px 0;
+    }
+    .menu-horizontal li {
+        text-align: center;
+        padding: 12px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .menu-horizontal li:first-child {
+        border-top: none;
+    }
+    
+    /* 4. Checkbox Hack: Se o checkbox estiver marcado, mostra o menu vertical */
+    #menu-toggle:checked ~ nav .menu-horizontal {
+        display: flex;
+    }
+    
+    /* Ajusta o padding do main para telas pequenas */
+    .conteudo-com-offset, .contato-layout, main {
+        padding-top: 65px; /* Reduz o padding para a altura do header menor no mobile */
+    }
+}
